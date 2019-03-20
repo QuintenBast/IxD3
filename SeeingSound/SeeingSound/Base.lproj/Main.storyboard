@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeeingSound" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-gO-VOC">
+                                <rect key="frame" x="45" y="144" width="324" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Song ID" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEY-Zl-h4b">
+                                <rect key="frame" x="45" y="69" width="324" height="50"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.074509803920000006" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-GF-Vwu">
+                                <rect key="frame" x="45" y="762" width="324" height="50"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <state key="normal" title="Show song color">
+                                    <color key="titleColor" red="0.070588235294117646" green="0.074509803921568626" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4n-lU-oBH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nyT-gO-VOC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="100" id="0JK-iZ-e6S"/>
+                            <constraint firstItem="YEY-Zl-h4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="AjD-mO-GQc"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="nyT-gO-VOC" secondAttribute="bottom" constant="150" id="FGk-JS-YMP"/>
+                            <constraint firstItem="nyT-gO-VOC" firstAttribute="top" secondItem="YEY-Zl-h4b" secondAttribute="bottom" constant="25" id="H4B-tO-4b9"/>
+                            <constraint firstItem="gaR-GF-Vwu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="IoP-VH-40O"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="gaR-GF-Vwu" secondAttribute="bottom" constant="50" id="MBx-Vo-1We"/>
+                            <constraint firstItem="gaR-GF-Vwu" firstAttribute="top" secondItem="nyT-gO-VOC" secondAttribute="bottom" constant="50" id="Rv8-Lg-vN6"/>
+                            <constraint firstItem="nyT-gO-VOC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="VIj-ti-KDE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEY-Zl-h4b" secondAttribute="trailing" constant="25" id="fsH-Zw-yGe"/>
+                            <constraint firstItem="YEY-Zl-h4b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="rkR-f0-frV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nyT-gO-VOC" secondAttribute="trailing" constant="25" id="rrg-Bq-NSy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gaR-GF-Vwu" secondAttribute="trailing" constant="25" id="spJ-kP-uKn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="nyT-gO-VOC" id="vXH-d9-0h3"/>
+                        <outlet property="textField" destination="YEY-Zl-h4b" id="VDM-pA-hew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
