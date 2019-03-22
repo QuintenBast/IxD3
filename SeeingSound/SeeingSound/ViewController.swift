@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     var valence = 0.000
     var danceability = 0.000
+    var energy = 0.000
 
 
     
@@ -57,7 +58,10 @@ class ViewController: UIViewController {
                             
                             // Get data from JSON File
                             self.valence = (jsonArray["valence"] as? NSNumber)?.doubleValue ?? 0
-                            print(self.valence)
+                            
+                            self.danceability = (jsonArray["danceability"] as? NSNumber)?.doubleValue ?? 0
+
+                            self.energy = (jsonArray["energy"] as? NSNumber)?.doubleValue ?? 0
                             
                             
                             // Draw the "art"
@@ -94,37 +98,37 @@ class ViewController: UIViewController {
 
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 324, height: 593))
         
+        
         let img = renderer.image { ctx in
 
-            ctx.cgContext.move(to: CGPoint(x: 175, y: 50))
-            ctx.cgContext.addLine(to: CGPoint(x: 175, y: 0))
-            ctx.cgContext.addLine(to: CGPoint(x: 175, y: 600))
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 0, y: 593))
             
-            ctx.cgContext.setLineWidth(5000)
+            ctx.cgContext.setLineWidth(1000)
             
             // Give color to elements with valence variable
             if valence > 0.900 {
-                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 1.0) // Orange
+                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.5, blue: 0.0, alpha: CGFloat(energy)) // Orange
             }
                 
             else if (0.600...0.750).contains(valence) {
-                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.0, blue: 0.45, alpha: 1.0) // Pink
+                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.0, blue: 0.45, alpha: CGFloat(energy)) // Pink
             }
                 
             else if (0.450...0.600).contains(valence) {
-                ctx.cgContext.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0) // Green
+                ctx.cgContext.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: CGFloat(energy)) // Green
             }
             
             else if (0.300...0.450).contains(valence) {
-                ctx.cgContext.setStrokeColor(red: 0.5, green: 0.0, blue: 8.0, alpha: 1.0) // Purple
+                ctx.cgContext.setStrokeColor(red: 0.5, green: 0.0, blue: 8.0, alpha: CGFloat(energy)) // Purple
             }
                 
             else if (0.150...0.300).contains(valence) {
-                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0) // Red
+                ctx.cgContext.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: CGFloat(energy)) // Red
             }
             
             else if valence < 0.150 {
-                ctx.cgContext.setStrokeColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0) // Black
+                ctx.cgContext.setStrokeColor(red: 0.5, green: 0.3, blue: 0.1, alpha: CGFloat(energy)) // Brown
             }
             
             ctx.cgContext.strokePath()
