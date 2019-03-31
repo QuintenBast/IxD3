@@ -108,15 +108,15 @@ class ViewController: UIViewController {
 
             
             ctxTwo.cgContext.move(to: CGPoint(x: 85, y: 50))
-            ctxTwo.cgContext.addLine(to: CGPoint(x: 85, y: tempo * 3.5))
+            ctxTwo.cgContext.addLine(to: CGPoint(x: 85, y: tempo * 3))
         
             
             ctxTwo.cgContext.move(to: CGPoint(x: 185, y: 50))
-            ctxTwo.cgContext.addLine(to: CGPoint(x: 185, y: tempo * 3.5))
+            ctxTwo.cgContext.addLine(to: CGPoint(x: 185, y: tempo * 3))
             
             
             ctxTwo.cgContext.move(to: CGPoint(x: 285, y: 50))
-            ctxTwo.cgContext.addLine(to: CGPoint(x: 285, y: tempo * 3.5))
+            ctxTwo.cgContext.addLine(to: CGPoint(x: 285, y: tempo * 3))
             
             
             // Give line width based on danceability variable
