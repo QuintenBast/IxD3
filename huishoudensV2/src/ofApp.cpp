@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 void ofApp::setup(){
-    ofSetCircleResolution(50);
+//    ofSetCircleResolution(50);
     font.load("Futura.ttc", 64);
     
     try {
@@ -25,20 +25,21 @@ void ofApp::draw(){
         ofLog() << "jaar = " << year << endl;
         query.bind(1, year);
         
+        ofBackground(50, 50, 50);
+        
         while(query.executeStep()){
             
             ofSetColor(ofColor::orange);
             totaalLerpValue = ofLerp(totaalLerpValue, query.getColumn("huishoudens_totaal").getDouble(), 0.05);
-            ofDrawCircle(100, 100, totaalLerpValue * 5);
-//            ofDrawRectRounded(100, 100, totaalLerpValue * 5);
+            ofDrawRectRounded(100, 100, totaalLerpValue * 5, 25, 10);
             
             ofSetColor(ofColor::red);
             singleLerpValue = ofLerp(singleLerpValue, query.getColumn("hh_single").getDouble(), 0.05);
-            ofDrawCircle(300, 100, singleLerpValue * 5);
+            ofDrawRectRounded(300, 100, singleLerpValue * 5, 25, 10);
             
             ofSetColor(ofColor::blue);
             multipleLerpValue = ofLerp(multipleLerpValue, query.getColumn("hh_multiple").getDouble(),0.05);
-            ofDrawCircle(500, 100, multipleLerpValue * 5);
+            ofDrawRectRounded(500, 100, multipleLerpValue * 5, 25, 10);
             
             lerpYear = ofLerp(lerpYear, years[yearIndex], 0.01);
             ofSetColor(ofColor::black);
